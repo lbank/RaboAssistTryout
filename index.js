@@ -55,6 +55,7 @@ app.post('/', express.json(), (req, res) => {
             reject(error)
           })
       })
+    }
 
   }
   
