@@ -35,7 +35,7 @@ app.post('/', express.json(), (req, res) => {
     } else {
 
       // var endpoint =  `https://f64ccf56.ngrok.io/monthly_expenses/?date_period=${JSON.stringify(spendingPeriod)}&category=${spendingCategory}`
-      var endpoint = `https://7d20c0d7.ngrok.io/monthly_expenses/`
+      var endpoint = `https://bca7c1fb.ngrok.io/monthly_expenses/`
       
       return new Promise(function(resolve, reject) {
           axios.get(endpoint, {
@@ -55,12 +55,6 @@ app.post('/', express.json(), (req, res) => {
             reject(error)
           })
       })
-
-      agent.add(`
-        You have spent x on ${spendingCategory} 
-        from ${dateFormat(spendingPeriod.startDate, "mmmm dS")} 
-        to ${dateFormat(spendingPeriod.endDate, "mmmm dS")}.`)
-    }
 
   }
   
